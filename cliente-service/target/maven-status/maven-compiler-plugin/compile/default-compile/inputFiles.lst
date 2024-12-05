@@ -1,0 +1,15 @@
+C:\Users\acer\IdeaProjects\Segundo_Entregable\cliente-service\src\main\java\com\bank\cliente\ClienteServiceApplication.java
+C:\Users\acer\IdeaProjects\Segundo_Entregable\cliente-service\src\main\java\com\bank\cliente\controller\ClienteController.java
+C:\Users\acer\IdeaProjects\Segundo_Entregable\cliente-service\src\main\java\com\bank\cliente\model\Cliente.java
+C:\Users\acer\IdeaProjects\Segundo_Entregable\cliente-service\src\main\java\com\bank\cliente\model\Credito.java
+C:\Users\acer\IdeaProjects\Segundo_Entregable\cliente-service\src\main\java\com\bank\cliente\model\CuentaBancaria.java
+C:\Users\acer\IdeaProjects\Segundo_Entregable\cliente-service\src\main\java\com\bank\cliente\model\enums\TipoCliente.java
+C:\Users\acer\IdeaProjects\Segundo_Entregable\cliente-service\src\main\java\com\bank\cliente\model\enums\TipoCredito.java
+C:\Users\acer\IdeaProjects\Segundo_Entregable\cliente-service\src\main\java\com\bank\cliente\model\enums\TipoCuenta.java
+C:\Users\acer\IdeaProjects\Segundo_Entregable\cliente-service\src\main\java\com\bank\cliente\model\enums\TipoMovimiento.java
+C:\Users\acer\IdeaProjects\Segundo_Entregable\cliente-service\src\main\java\com\bank\cliente\model\Movimiento.java
+C:\Users\acer\IdeaProjects\Segundo_Entregable\cliente-service\src\main\java\com\bank\cliente\model\ReporteComisionesRequest.java
+C:\Users\acer\IdeaProjects\Segundo_Entregable\cliente-service\src\main\java\com\bank\cliente\repository\ClienteRepository.java
+C:\Users\acer\IdeaProjects\Segundo_Entregable\cliente-service\src\main\java\com\bank\cliente\repository\CreditoRepository.java
+C:\Users\acer\IdeaProjects\Segundo_Entregable\cliente-service\src\main\java\com\bank\cliente\repository\CuentaBancariaRepository.java
+C:\Users\acer\IdeaProjects\Segundo_Entregable\cliente-service\src\main\java\com\bank\cliente\service\ClienteService.java

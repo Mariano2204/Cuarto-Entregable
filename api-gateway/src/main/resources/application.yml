@@ -1,0 +1,28 @@
+server:
+  port: 8080
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: cliente-service
+          uri: lb://CLIENTE-SERVICE
+          predicates:
+            - Path=/clientes/**
+        - id: cuenta-service
+          uri: lb://CUENTA-SERVICE
+          predicates:
+            - Path=/cuentas/**
+        - id: credito-service
+          uri: lb://CREDITO-SERVICE
+          predicates:
+            - Path=/creditos/**
+        - id: movimiento-service
+          uri: lb://MOVIMIENTO-SERVICE
+          predicates:
+            - Path=/movimientos/**
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/

@@ -1,0 +1,15 @@
+com\bank\cliente\service\ClienteService.class
+com\bank\cliente\model\enums\TipoMovimiento.class
+com\bank\cliente\model\enums\TipoCliente.class
+com\bank\cliente\repository\ClienteRepository.class
+com\bank\cliente\model\Cliente.class
+com\bank\cliente\model\enums\TipoCredito.class
+com\bank\cliente\controller\ClienteController.class
+com\bank\cliente\ClienteServiceApplication.class
+com\bank\cliente\repository\CreditoRepository.class
+com\bank\cliente\model\CuentaBancaria.class
+com\bank\cliente\model\ReporteComisionesRequest.class
+com\bank\cliente\model\enums\TipoCuenta.class
+com\bank\cliente\repository\CuentaBancariaRepository.class
+com\bank\cliente\model\Credito.class
+com\bank\cliente\model\Movimiento.class
