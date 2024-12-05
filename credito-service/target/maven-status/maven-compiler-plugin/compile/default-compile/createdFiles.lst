@@ -1,0 +1,9 @@
+com\bank\credito\repository\CreditoRepository.class
+com\bank\credito\model\Credito.class
+com\bank\credito\repository\MovimientoRepository.class
+com\bank\credito\service\CreditoService.class
+com\bank\credito\controller\CreditoController.class
+com\bank\credito\model\enums\TipoMovimiento.class
+com\bank\credito\CreditoServiceApplication.class
+com\bank\credito\model\enums\TipoCredito.class
+com\bank\credito\model\Movimiento.class

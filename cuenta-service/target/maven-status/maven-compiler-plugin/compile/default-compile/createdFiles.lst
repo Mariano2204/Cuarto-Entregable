@@ -1,0 +1,11 @@
+com\bank\cuenta\model\enums\TipoMovimiento.class
+com\bank\cuenta\model\Movimiento.class
+com\bank\cuenta\service\CuentaService.class
+com\bank\cuenta\model\Cuenta.class
+com\bank\cuenta\service\MovimientoService.class
+com\bank\cuenta\CuentaServiceApplication.class
+com\bank\cuenta\model\enums\TipoCuenta.class
+com\bank\cuenta\repository\MovimientoRepository.class
+com\bank\cuenta\model\TransferenciaRequest.class
+com\bank\cuenta\controller\CuentaController.class
+com\bank\cuenta\repository\CuentaRepository.class
