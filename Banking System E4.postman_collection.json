@@ -1,0 +1,922 @@
+{
+	"info": {
+		"_postman_id": "a2b0b5ce-c983-45ce-9a5d-7a66899a1aa5",
+		"name": "Banking System E4",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23628914"
+	},
+	"item": [
+		{
+			"name": "cliente-service",
+			"item": [
+				{
+					"name": "Crear un nuevo cliente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombre\": \"Mariano Muñoz\",\r\n  \"tipo\": \"PERSONAL\",\r\n  \"productos\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/clientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener todos los clientes",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener un cliente por ID",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar un cliente",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombre\": \"Mariano Muñoz De la Cruz\",\r\n  \"tipo\": \"PERSONAL\",\r\n  \"productos\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/clientes/6740c28c91bd9a3e732d2c8e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"clientes",
+								"6740c28c91bd9a3e732d2c8e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar un cliente",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/clientes/6740c41491bd9a3e732d2c8f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"clientes",
+								"6740c41491bd9a3e732d2c8f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Agregar una cuenta bancaria a un cliente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"numeroCuenta\": \"70745625\",\r\n  \"tipoCuenta\": \"AHORRO\",\r\n  \"saldo\": 1000.0,\r\n  \"maxTransaccionesSinComision\": 5,\r\n  \"comisionPorTransaccion\": 1.0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/clientes/6740c41491bd9a3e732d2c8f/cuentas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"clientes",
+								"6740c41491bd9a3e732d2c8f",
+								"cuentas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener resumen de saldo promedio diario",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Generar reporte de comisiones",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"fechaInicio\": \"2024-01-01\",\r\n  \"fechaFin\": \"2024-12-31\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/clientes/6740c41491bd9a3e732d2c8f/reporte-comisiones",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"clientes",
+								"6740c41491bd9a3e732d2c8f",
+								"reporte-comisiones"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Agregar un credito a un cliente",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener resumen consolidado",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cuenta-service",
+			"item": [
+				{
+					"name": "Crear una cuenta",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"numeroCuenta\": \"123456789\",\r\n  \"tipoCuenta\": \"AHORRO\",\r\n  \"saldo\": 1000.0,\r\n  \"clienteId\": \"1\",\r\n  \"maxTransaccionesSinComision\": 5,\r\n  \"comisionPorTransaccion\": 1.0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/cuentas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"cuentas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener todas las cuentas",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener una cuenta por id",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar una cuenta",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"numeroCuenta\": \"123456789\",\r\n  \"tipoCuenta\": \"AHORRO\",\r\n  \"saldo\": 2000.0,\r\n  \"clienteId\": \"1\",\r\n  \"maxTransaccionesSinComision\": 5,\r\n  \"comisionPorTransaccion\": 1.0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/cuentas/6740c6c62e784f4aba6c535d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"cuentas",
+								"6740c6c62e784f4aba6c535d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar una cuenta",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/cuentas/6740c6c62e784f4aba6c535d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"cuentas",
+								"6740c6c62e784f4aba6c535d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Transferir dinero entre cuentas del mismo cliente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"cuentaOrigenId\": \"1\",\r\n  \"cuentaDestinoId\": \"2\",\r\n  \"monto\": 100.0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/cuentas/transferir",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"cuentas",
+								"transferir"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Transferir dinero a cuentas de terceros del mismo banco",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/cuentas/transferir-terceros",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"cuentas",
+								"transferir-terceros"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "credito-service",
+			"item": [
+				{
+					"name": "Crear credito",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"tipoCredito\": \"PERSONAL\",\r\n  \"limiteCredito\": 8000.0,\r\n  \"saldo\": 0.0,\r\n  \"clienteId\": \"6740c41491bd9a3e732d2c8f\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/creditos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"creditos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener todos los creditos",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener un credito por ID",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar un crédito",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"tipoCredito\": \"PERSONAL\",\r\n  \"limiteCredito\": 10000.0,\r\n  \"saldo\": 4000.0,\r\n  \"clienteId\": \"6740c41491bd9a3e732d2c8f\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/creditos/6740d5fa9c1ced4cf95b0fe6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"creditos",
+								"6740d5fa9c1ced4cf95b0fe6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar un credito",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/creditos/6740d74d9c1ced4cf95b0fe7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"creditos",
+								"6740d74d9c1ced4cf95b0fe7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "movimiento-service",
+			"item": [
+				{
+					"name": "Crear un movimiento",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"fecha\": \"2024-11-22T12:00:00\",\r\n  \"tipoMovimiento\": \"DEPOSITO\",\r\n  \"monto\": 100.0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/movimientos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"movimientos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener todos los movimientos",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener un movimiento por id",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar un movimiento",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/movimientos/6740d83ecdbfc33f20d965ab",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"movimientos",
+								"6740d83ecdbfc33f20d965ab"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar un movimiento",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/movimientos/6740d8fbcdbfc33f20d965ac",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"movimientos",
+								"6740d8fbcdbfc33f20d965ac"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "tarjeta-service",
+			"item": [
+				{
+					"name": "Obtener todas las tarjetas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8085/tarjetas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"tarjetas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear una nueva tarjeta",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"numeroTarjeta\": \"1234567890123456\",\r\n    \"clienteId\": \"674658bb186d660dfd5da66e\",\r\n    \"cuentaPrincipalId\": \"6746490a4fa097027723e755\",\r\n    \"cuentasAsociadas\": [\"67465afc4fa097027723e756\", \"67465b694fa097027723e758\"],\r\n    \"movimientos\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8085/tarjetas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"tarjetas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener una tarjeta por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8085/tarjetas/6750bd6aa9fe8d7828708892",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"tarjetas",
+								"6750bd6aa9fe8d7828708892"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar una tarjeta existente",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"numeroTarjeta\": \"1234567890123456\",\r\n    \"clienteId\": \"674658bb186d660dfd5da66e\",\r\n    \"cuentaPrincipalId\": \"6746490a4fa097027723e755\",\r\n    \"cuentasAsociadas\": [\"67465afc4fa097027723e756\", \"67465b694fa097027723e758\"],\r\n    \"movimientos\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8085/tarjetas/6750bd6aa9fe8d7828708892",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"tarjetas",
+								"6750bd6aa9fe8d7828708892"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar una tarjeta por ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8085/tarjetas/6750bd6aa9fe8d7828708892",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"tarjetas",
+								"6750bd6aa9fe8d7828708892"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar el saldo de la cuenta principal de una tarjeta",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener los últimos movimientos de una tarjeta",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8085/tarjetas/6750bd6aa9fe8d7828708892/movimientos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"tarjetas",
+								"6750bd6aa9fe8d7828708892",
+								"movimientos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Realizar un pago con una tarjeta",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"monto\": 100.0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8085/tarjetas/6750bd6aa9fe8d7828708892/pago",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"tarjetas",
+								"6750bd6aa9fe8d7828708892",
+								"pago"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Asociar una cuenta a una tarjeta",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cuentaId\": \"6750de7f462fd546d22f9348\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8085/tarjetas/6750df0ca9fe8d7828708893/asociar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"tarjetas",
+								"6750df0ca9fe8d7828708893",
+								"asociar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Establecer una cuenta principal para una tarjeta",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cuentaPrincipalId\": \"674633fd4fa097027723e752\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8085/tarjetas/6750df0ca9fe8d7828708893/cuenta-principal",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"tarjetas",
+								"6750df0ca9fe8d7828708893",
+								"cuenta-principal"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "yanki-service",
+			"item": [
+				{
+					"name": "Crear un nuevo monedero",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n           \"numeroDocumento\": \"12312312\",\r\n           \"tipoDocumento\": \"DNI\",\r\n           \"numeroCelular\": \"944746517\",\r\n           \"imeiCelular\": \"123451234512345\",\r\n           \"correoElectronico\": \"usuario2@ejemplo.com\",\r\n           \"saldo\": 8200.0,\r\n           \"tarjetaDebitoId\": \"\"\r\n         }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8086/monederos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8086",
+							"path": [
+								"monederos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener todos los monederos",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener un monedero por ID",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar un monedero",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8086/monederos/67513e70713c435bb2767084",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8086",
+							"path": [
+								"monederos",
+								"67513e70713c435bb2767084"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Enviar un pago",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"numeroCelular\" : \"944746517\",\r\n    \"monto\" : 100.0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8086/monederos/enviar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8086",
+							"path": [
+								"monederos",
+								"enviar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Recibir un pago",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"numeroCelular\": \"944746517\",\r\n    \"monto\": 100.0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8086/monederos/recibir",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8086",
+							"path": [
+								"monederos",
+								"recibir"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Asociar una tarjeta",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"numeroCelular\": \"944746517\",\r\n    \"tarjetaDebitoId\": \"6750bd6aa9fe8d7828708892\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8086/monederos/asociar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8086",
+							"path": [
+								"monederos",
+								"asociar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
