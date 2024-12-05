@@ -1,0 +1,6 @@
+com\bank\movimiento\repository\MovimientoRepository.class
+com\bank\movimiento\service\MovimientoService.class
+com\bank\movimiento\model\enums\TipoMovimiento.class
+com\bank\movimiento\model\Movimiento.class
+com\bank\movimiento\MovimientoServiceApplication.class
+com\bank\movimiento\controller\MovimientoController.class
